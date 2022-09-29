@@ -1,13 +1,16 @@
 import { Box, Button, Typography } from "@mui/material";
 
-const TabPanel = ({ children, index, name, value }) => {
+import { getRewardPoints } from "../services/rewardPoints";
+
+const TabPanel = ({ children, id, name, value }) => {
     const handleClick = () => {
-        console.log("clicked!");
+        const rewardPoints = getRewardPoints(id);
+        console.log(rewardPoints);
     }
 
     return (
-        <div hidden={value !== index}>
-            {value === index && (
+        <div hidden={value !== id}>
+            {value === id && (
                 <Box sx={{ p: 3 }}>
                     <Typography>
                         Welcome, {name}!
