@@ -1,3 +1,17 @@
+# Rewards Program App
+
+This is a basic rewards program app based around the premise that a rewards program awards customers 2 points for every dollar spent over $100, and 1 point for every dollar spent over $50, per transaction. This application is mocking an API call to get 3 months of transaction data from 3 customers.
+
+I chose to use Material UI to save time in this exercise.
+
+## What I Would Improve
+
+Given more time, I would improve many things: 
+ - use custom components instead of Material UI
+ - add robust unit testing
+ - add logic for how returns (negative values) would be handled
+ - ponder how to improve the math logic
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
