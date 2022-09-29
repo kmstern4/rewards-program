@@ -6,5 +6,6 @@ describe('App', () => {
     const {getByText} = render(<App/>);
 
     expect(getByText('Customer Rewards Program')).toBeInTheDocument;
+    expect(screen.findByTestId('tabs')).toBeInTheDocument;
   })
 })
