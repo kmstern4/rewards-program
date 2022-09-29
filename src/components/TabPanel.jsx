@@ -4,13 +4,12 @@ import { useState } from "react";
 import { getRewardPoints } from "../services/rewardPoints";
 import DataTable from "./DataTable";
 
-const TabPanel = ({ children, id, name, value }) => {
+const TabPanel = ({ id, name, value }) => {
     const [data, setData] = useState({});
     const [showDataTable, setShowDataTable] = useState(false);
     
     const handleClick = (id) => {
         const rewardPoints = getRewardPoints(id);
-        console.log(rewardPoints);
         setData(rewardPoints);
         setShowDataTable(true);
     }
