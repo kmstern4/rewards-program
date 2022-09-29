@@ -1,12 +1,18 @@
 import { Box, Button, Typography } from "@mui/material";
+import { useState } from "react";
 
 import { getRewardPoints } from "../services/rewardPoints";
 import DataTable from "./DataTable";
 
 const TabPanel = ({ children, id, name, value }) => {
-    const handleClick = () => {
+    const [data, setData] = useState({});
+    const [showDataTable, setShowDataTable] = useState(false);
+    
+    const handleClick = (id) => {
         const rewardPoints = getRewardPoints(id);
         console.log(rewardPoints);
+        setData(rewardPoints);
+        setShowDataTable(true);
     }
 
     return (
@@ -16,8 +22,10 @@ const TabPanel = ({ children, id, name, value }) => {
                     <Typography>
                         Welcome, {name}!
                     </Typography>
-                    <Button onClick={handleClick} variant="contained" sx={{ marginTop: "1rem", marginBottom: "1rem" }}>Show me my points</Button>
-                    <DataTable />
+                    <Button onClick={() => handleClick(id)} variant="contained" sx={{ marginTop: "1rem", marginBottom: "1.5rem" }}>Show me my points</Button>
+                    {showDataTable &&
+                        <DataTable data={data}/>
+                    }
                 </Box>
             )}
         </div>
