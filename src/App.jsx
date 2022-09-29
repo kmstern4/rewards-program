@@ -26,15 +26,9 @@ const App = () => {
           <Tab label="Customer Three" />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
+      <TabPanel value={value} index={0} name="Helena Riggs" />
+      <TabPanel value={value} index={1} name="Mark Scout" />
+      <TabPanel value={value} index={2} name="Burt Goodman" />
     </>
   );
 }
