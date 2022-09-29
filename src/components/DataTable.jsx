@@ -1,22 +1,40 @@
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
-const DataTable = () => {
-    const rows = [
-        {
-            name: "June",
-            points: "400"
-        },
-        {
-            name: "July",
-            points: "300"
+const DataTable = ({ data }) => {
+    const calculatePoints = (array) => {
+        let points = 0;
+        for (let i = 0; i < array.length; i++) {
+            const single = array[i] - 50;
+            const double = single - 50;
+            if (single > 0) {
+                points += single + (double > 0 ? double : 0);
+            }
         }
-    ]
+
+        return points;
+    }
+
+    const createRows = (data) => {
+        let rows = [];
+        let total = 0;
+        for (const [key, value] of Object.entries(data)) {
+            let monthData = {
+                name: key,
+                points: calculatePoints(value)
+            }
+            rows.push(monthData);
+            total += monthData.points;
+        }
+
+        rows.push({
+            name: "Total",
+            points: total
+        });
+
+        return rows;
+    }
+
+    const tableRows = createRows(data.transactions);
 
     return (
         <TableContainer component={Paper} sx={{ maxWidth: 200 }}>
@@ -28,7 +46,7 @@ const DataTable = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row) => (
+                    {tableRows.map((row) => (
                         <TableRow 
                             key={row.name} 
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
