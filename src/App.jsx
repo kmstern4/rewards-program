@@ -21,7 +21,7 @@ const App = () => {
       </Container>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleTabChange} data-testid="tabs">
-          <Tab label="Customer One" />
+          <Tab label="Customer One" sx={{ marginLeft: "4rem" }} />
           <Tab label="Customer Two" />
           <Tab label="Customer Three" />
         </Tabs>
