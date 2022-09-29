@@ -19,8 +19,16 @@ const App = () => {
       <Container>
         <Typography variant="h4" mt={2} fontWeight={500} textAlign={'center'}>Customer Rewards Program</Typography>
       </Container>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleTabChange} data-testid="tabs">
+      <Box sx={{ borderBottom: 1, borderColor: '#404040' }}>
+        <Tabs 
+          value={value} 
+          onChange={handleTabChange} 
+          data-testid="tabs" 
+          sx={{ '& .MuiButtonBase-root': {
+            color: '#b3b3b3'
+            }
+          }}
+        >
           <Tab label="Customer One" sx={{ marginLeft: "4rem" }} />
           <Tab label="Customer Two" />
           <Tab label="Customer Three" />
