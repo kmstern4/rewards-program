@@ -2,13 +2,13 @@ export const purchases =[
     {
         id: 0,
         transactions: {
-            june: [
-                110, 95, 20, 270, 165
+            June: [
+                120, 50, 100, 200
             ],
-            july: [
+            July: [
                 400, 10, 15
             ],
-            august: [
+            August: [
                 105, 60, 235, 110, 220, 150, 240
             ]
         }
@@ -16,13 +16,13 @@ export const purchases =[
     {
         id: 1,
         transactions: {
-            june: [
+            June: [
                 435, 80, 306, 471, 34
             ],
-            july: [
+            July: [
                 40360
             ],
-            august: [
+            August: [
                 106, 292, 88, 39
             ]
         }
@@ -30,13 +30,13 @@ export const purchases =[
     {
         id: 2,
         transactions: {
-            june: [
+            June: [
                 115, 425
             ],
-            july: [
-                496, -115
+            July: [
+                496, 115
             ],
-            august: [
+            August: [
                 129, 121, 197, 97, 416, 456, 438, 189, 211, 3, 249, 3, 201, 299, 445, 449, 27, 95
             ]
         }
